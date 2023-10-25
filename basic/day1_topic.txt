@@ -1,0 +1,15 @@
+classes - template
+obejct - live entity based on template
+properties,method - entity, access it
+allocated and initialise constructor
+constructor - initialised - 0 arg constru , args arg-wala constructor
+
+ref - object
+
+in short - private , public
+encapsulation 
+
+garbage collection - object deallocation
+
+local variable, instance variable - scopes,lifetime
+concept object equality - == and equals
