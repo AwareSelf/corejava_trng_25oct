@@ -8,16 +8,19 @@ public abstract class Shape {
 	
 	private double side1,side2,side3;
 	private double radius;
+	private String shapeType;
 	
-	public Shape(double side1) {
+	public Shape(double side1,String shapeType) {
 		super();
 		this.side1 = side1;
+		this.shapeType =  shapeType;
 	}
 
-	public Shape(double side1, double side2) {
+	public Shape(double side1, double side2,String shapeType) {
 		super();
 		this.side1 = side1;
 		this.side2 = side2;
+		this.shapeType =  shapeType;
 	}
 
 	public double getSide1() {
@@ -52,6 +55,16 @@ public abstract class Shape {
 		this.radius = radius;
 	}
 	
+	
+	
+	public String getShapeType() {
+		return shapeType;
+	}
+
+	public void setShapeType(String shapeType) {
+		this.shapeType = shapeType;
+	}
+
 	public abstract double computeArea();
 
 	

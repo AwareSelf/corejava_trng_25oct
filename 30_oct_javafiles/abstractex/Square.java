@@ -2,9 +2,9 @@ package abstractex;
 
 public class Square extends Shape {
 	
-	public Square(int side)
+	public Square(double side)
 	{
-		super(side);
+		super(side,"Square");
 	}
 
 	@Override
