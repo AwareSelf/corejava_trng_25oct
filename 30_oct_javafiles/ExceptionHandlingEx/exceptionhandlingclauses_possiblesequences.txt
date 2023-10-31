@@ -1,0 +1,13 @@
+all possible clauses:-
+
+try --> catch --> finally
+try --> catch
+try --> catch --> catch
+try --> finally
+
+only try block without catch or finally -- error
+
+try-with-resource 
+try-with-resource -> catch
+
+

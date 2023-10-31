@@ -3,9 +3,10 @@ package exceptionhandlingex;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
-public class ExceptionEx2 {
+public class TryWithResourceException {
 	
 	//all RuntimeException and its subclasses come under category
 	//of unchecked exceptions
@@ -25,12 +26,16 @@ public class ExceptionEx2 {
 	
 	public static boolean meth()
 	{
-		  FileReader  fr = null;
+		  
 		  int ct =0;
-		try
+		  File f = new File("C://java_vw_25oct//corejava_trng//ExceptionHandlingEx//src//exceptionhandlingex//ExceptionEx.java");
+		
+		  File f1 = new File("C://java_vw_25oct//corejava_trng//ExceptionHandlingEx//src//exceptionhandlingex//ExceptionEx11.java");
+		  try( FileReader fr = new FileReader(f);
+			 FileWriter fw = new FileWriter(f1) )
 		{
-		File f = new File("C://java_vw_25oct//corejava_trng//ExceptionHandlingEx//src//exceptionhandlingex//ExceptionEx.java");
-		fr = new FileReader(f); //FileReader is class meant to read from source - file in a character mode
+		
+		 //FileReader is class meant to read from source - file in a character mode
 		  int ch;
 		  while((ch = fr.read())!=-1) //-1 denotes EOF
 		  {
@@ -51,17 +56,7 @@ public class ExceptionEx2 {
 		{
 			System.out.println("some another ioexception: like file read..etc.");
 		}
-		finally
-		{
-			System.out.println("inside finally block..no of char read:"+ct);
-          try {
-        	  if(fr!=null)
-        	      fr.close();
-		   } catch (IOException e) {
-			
-			  e.printStackTrace();
-		   }
-		}
+		
 		System.out.println("remaining code from meth continues...");
 		return false;
 	}
